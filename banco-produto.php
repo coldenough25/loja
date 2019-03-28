@@ -12,4 +12,10 @@ function listaProduto($conexao){
     array_push($produtos, $produto);
   }return $produtos;
 }
+
+function deletaProduto($conexao, $id){
+  $query = "DELETE FROM produtos WHERE id = {$id}";
+  return mysqli_query($conexao, $query);
+    
+}
 ?>
