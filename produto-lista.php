@@ -13,15 +13,22 @@
   <tr>
     <td>Nome </td>
     <td>Preço </td>
+    <td>Descrição</td>
     <td>Deletar produto</td>
   </tr>
   <?php foreach($produtos as $produto){ ?>
     <tr>
       <td><?=$produto['nome']?></td>
       <td><?=$produto['preco']?></td>
-      <td><a href="remove-produto.php ?id=<?= $produto["id"]?>" class="text-danger">Remover</a></td>
+      <td><?=$produto['descricao']?></td>
+      <td>
+        <form action="remove-produto.php" method="post">
+          <input type="hidden" name="id" value="<?= $produto["id"]?>">
+          <button class="btn btn-danger">Remover</button>
+        </form>
+      </td>
   </tr>
-<?php }; ?>
+<?php } ?>
 </table>
 
 <?php include("rodape.php") ?>

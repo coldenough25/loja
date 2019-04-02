@@ -1,6 +1,6 @@
 <?php
-  function insereProduto ($conexao, $nome, $preco){
-  $query = "INSERT INTO produtos (nome, preco) VALUES('{$nome}', {$preco})";
+  function insereProduto ($conexao, $nome, $preco, $descricao){
+  $query = "INSERT INTO produtos (nome, preco, descricao) VALUES('{$nome}', {$preco}, '{$descricao}')";
   $resultado = mysqli_query($conexao, $query);
   return $resultado;
 }
@@ -16,6 +16,6 @@ function listaProduto($conexao){
 function deletaProduto($conexao, $id){
   $query = "DELETE FROM produtos WHERE id = {$id}";
   return mysqli_query($conexao, $query);
-    
+
 }
 ?>
