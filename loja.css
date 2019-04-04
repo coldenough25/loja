@@ -21,6 +21,10 @@ td{
   text-align: justify;
 }
 
+#font-size{
+  font-size: 20px;
+}
+
 /*.navbar, .navbar-inverse, .navbar-fixed-top{
   background-color: #ffffff;
 }

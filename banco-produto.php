@@ -1,6 +1,6 @@
 <?php
-  function insereProduto ($conexao, $nome, $preco, $descricao){
-  $query = "INSERT INTO produtos (nome, preco, descricao) VALUES('{$nome}', {$preco}, '{$descricao}')";
+  function insereProduto ($conexao, $nome, $preco, $categoria_id, $descricao){
+  $query = "INSERT INTO produtos (nome, preco, descricao, categoria_id) VALUES('{$nome}', {$preco}, '{$descricao}', {$categoria_id})";
   $resultado = mysqli_query($conexao, $query);
   return $resultado;
 }

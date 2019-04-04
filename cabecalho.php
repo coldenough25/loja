@@ -15,9 +15,10 @@
         </div>
         <div>
           <ul class="nav navbar-nav">
-            <li><a href="produto-formulario.php">Adiciona produto</a></li>
+            <li><a href="produto-formulario.php">Adicionar produto</a></li>
             <li><a href="produto-lista.php">Lista de produtos</a></li>
             <li><a href="sobre.php">Sobre 404</a></li>
+            <li><a href="adiciona-categoria.php"></a></li>
           </ul>
         </div>
   </div>
