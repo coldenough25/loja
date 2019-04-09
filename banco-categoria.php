@@ -6,4 +6,6 @@ function listaCategoria($conexao){
     array_push($categorias, $categoria);
   }return $categorias;
 }
+
+
  ?>

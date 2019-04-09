@@ -16,19 +16,31 @@
     <td>Descrição</td>
     <td>Categoria</td>
     <td>Deletar produto</td>
+    <td>USADO</td>
+    <td>Imagem</td>
   </tr>
   <?php foreach($produtos as $produto){ ?>
     <tr>
       <td><?=$produto['nome']?></td>
       <td><?=$produto['preco']?></td>
       <td><?=substr($produto['descricao'], 0, 15)?></td>
-      <td><?=$produto['categoria_id']?></td>
+      <td><?=$produto["categoria_nome"]?></td>
       <td>
         <form action="remove-produto.php" method="post">
           <input type="hidden" name="id" value="<?= $produto["id"]?>">
           <button class="btn btn-danger">Remover</button>
         </form>
       </td>
+      <?php foreach ($produtos as $produto) {
+        if ($produto['usado'] == 1) {
+          $usado = "Sim";
+        } else {
+          $usado = "Não";
+        }
+      } ?>
+      <td><?=$usado?></td>
+      <?php $caminho = "imagens".$produto['imagem']; ?>
+      <td><img src="<?=$caminho?>"></td>
   </tr>
 <?php } ?>
 </table>

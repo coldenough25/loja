@@ -5,10 +5,21 @@
 
 
   <?php
+  $usado = $_POST['usado'];
+  if (array_key_exists('usado', $_POST)) {
+    $usado = "true";
+  }else{
+    $usado = "false";
+  }
+
     $nome = $_POST["nome"];
     $preco = $_POST["preco"];
     $descricao = $_POST["descricao"];
     $categoria_id = $_POST["categoria_id"];
+    $imagem = $_POST["imagem"];
+    if (insereProduto($conexao, $nome, $preco, $descricao, $categoria_id, $usado, $imagem)) {
+      # code...
+    }
   ?>
 
   <br><br><br><br>
