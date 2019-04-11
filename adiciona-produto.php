@@ -5,8 +5,7 @@
 
 
   <?php
-  $usado = $_POST['usado'];
-  if (array_key_exists('usado', $_POST)) {
+  if (array_key_exists("usado", $_POST)) {
     $usado = "true";
   }else{
     $usado = "false";
@@ -17,14 +16,11 @@
     $descricao = $_POST["descricao"];
     $categoria_id = $_POST["categoria_id"];
     $imagem = $_POST["imagem"];
-    if (insereProduto($conexao, $nome, $preco, $descricao, $categoria_id, $usado, $imagem)) {
-      # code...
-    }
   ?>
 
   <br><br><br><br>
   <?php
-   if (insereProduto($conexao, $nome, $preco, $categoria_id, $descricao)) {?>
+   if (insereProduto($conexao, $nome, $preco, $categoria_id, $descricao, $usado, $imagem)) {?>
   <p class="alert-success">
     Produto <?= $nome;?>, de preço <?= $preco;?> adicionado com sucesso!
   </p>

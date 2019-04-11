@@ -29,3 +29,19 @@ td{
   background-color: #ffffff;
 }
 */
+
+img{
+  max-width: 120px;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+  border-color: black;
+  border-radius: 20px;
+  border-style: solid;
+  border-width: medium;
+  box-shadow: 5px 5px 10px;
+}
+
+.table{
+  box-shadow: 5px 5px 10px;
+}
