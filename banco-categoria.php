@@ -7,5 +7,16 @@ function listaCategoria($conexao){
   }return $categorias;
 }
 
+function insereCategoria($conexao, $nome){
+  $query = "INSERT INTO categorias (nome) VALUES('{$nome}')";
+  $resultado = mysqli_query($conexao, $query);
+  return $resultado;
+}
+
+function deletaCategoria($conexao, $id){
+  $query = "DELETE FROM categorias WHERE id = {$id}";
+  return mysqli_query($conexao, $query);
+
+}
 
  ?>

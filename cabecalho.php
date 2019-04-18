@@ -18,7 +18,8 @@
             <li><a href="produto-formulario.php">Adicionar produto</a></li>
             <li><a href="produto-lista.php">Lista de produtos</a></li>
             <li><a href="sobre.php">Sobre 404</a></li>
-            <li><a href="adiciona-categoria.php"></a></li>
+            <li><a href="categoria-formulario.php">Adiciona categoria</a></li>
+            <li><a href="categoria-lista.php">Lista de categorias</a></li>
           </ul>
         </div>
   </div>
