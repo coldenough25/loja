@@ -1,17 +1,20 @@
 <?php include "cabecalho.php"?>
 <?php include "conecta.php" ?>
 <?php include "banco-categoria.php";
+include "banco-fornecedor.php";
 include "banco-produto.php";
   $id = $_GET['id'];
   $produto = buscaProduto($conexao, $id);
   $categorias = listaCategoria($conexao);
+  $usado = $produto['usado']?"checked = checked":"";
+  $fornecedores = listaFornecedores($conexao);
+
 
 ?>
   <h1>Alterar produto</h1>
 
 <br><br><br><br>
-<h1>Formulário de cadastro</h1>
-<form action="produto-altera-formulario.php" method="post">
+<form action="altera-produto.php" method="post">
   <table>
       <tr>
         <td>Nome  </td>
@@ -25,11 +28,17 @@ include "banco-produto.php";
 
       <tr>
           <td>Categoria</td>
-          <td><select name="categoria_id" class="form-controle" value="<?=$categoria['id']?>">
-          <?php foreach ($categorias as $categoria){?>
-            <option value="<?=$categoria['id']?>"><?=$categoria['nome']?></option>
+          <td>
+            <select name="fornecedor_id" class="form-control">
+              <?php foreach ($forncedores as $fornecedor):
+              $esseFornecedor = $produto['fonecedor_id'] == $fornecedor['id'];
+              $selecao = $esseFornecedor ? "selected=selected" : "";?>
+              <option value="<?=$fornecedor['id']?>"<?=$selecao ?>>
+                <?=$fornecedor['nome'] ?>
+              </option>
 
-          <?php }?>
+            <?php endforeach?>
+          </select>
         </td>
       </tr>
 
