@@ -26,7 +26,7 @@
       <td><img src="<?=$caminho?>"></td>
       <td><?=$produto['nome']?></td>
       <td><?=$produto['preco']?></td>
-      <td><?=substr($produto['descricao'], 0, 15)?></td>
+      <td><?=substr($produto['descricao'], 0, 50)?></td>
       <td><?=$produto["categoria_nome"]?></td>
       <?php foreach ($produtos as $produto) {
         if ($produto['usado'] == 1) {
@@ -37,7 +37,7 @@
       } ?>
       <td><?=$usado?></td>
 
-      <td><form action="altera-produto.php" method="post">
+      <td><form action="produto-altera-formulario.php" method="post">
             <input type="hidden" name="id" value="<?=$produto["id"]?>">
             <button class="btn btn-primary">Alterar</button>
           </form>

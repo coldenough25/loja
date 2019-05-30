@@ -21,6 +21,11 @@
             <li><a href="categoria-formulario.php">Adiciona categoria</a></li>
             <li><a href="categoria-lista.php">Lista de categorias</a></li>
           </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="contato.php"><span class="glyphicon glyphicon-envelope"></span> Contato</a></li>
+            <li><a href="index.php"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+            <li><a href="logout.php"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
+          </ul>
         </div>
   </div>
 </div>
