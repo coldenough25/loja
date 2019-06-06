@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06-Jun-2019 às 13:00
+-- Generation Time: 06-Jun-2019 às 13:02
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.2.12
 
@@ -46,6 +46,24 @@ INSERT INTO `categorias` (`id`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `fornecedores`
+--
+
+CREATE TABLE `fornecedores` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `fornecedores`
+--
+
+INSERT INTO `fornecedores` (`id`, `nome`) VALUES
+(1, 'Papelaria Tilibra LTDA.');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `produtos`
 --
 
@@ -69,6 +87,25 @@ INSERT INTO `produtos` (`id`, `nome`, `preco`, `descricao`, `categoria_id`, `usa
 (15, 'baianor', '9999.00', 'baianor simulator feijoada fodasekkkkkkkkkkkk', 2, 0, 'baianor.jpg', 1),
 (16, 'Borracha', '1.00', 'asockvnjnqnqfbqfbwfbw', 1, 0, 'borracha.jpg', 1);
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `senha` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `email`, `senha`) VALUES
+(1, 'pedrolechner10@gmail.com', ' 7a6744a0f3b75cd0c4381ebd09158aad');
+
 --
 -- Indexes for dumped tables
 --
@@ -80,9 +117,21 @@ ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `fornecedores`
+--
+ALTER TABLE `fornecedores`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `produtos`
 --
 ALTER TABLE `produtos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `usuarios`
+--
+ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -96,10 +145,22 @@ ALTER TABLE `categorias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `fornecedores`
+--
+ALTER TABLE `fornecedores`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
