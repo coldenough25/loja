@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Abr-2019 às 15:47
+-- Generation Time: 06-Jun-2019 às 12:56
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.2.12
 
@@ -39,7 +39,9 @@ CREATE TABLE `categorias` (
 
 INSERT INTO `categorias` (`id`, `nome`) VALUES
 (1, 'Informatica'),
-(2, 'Papelaria');
+(2, 'Papelaria'),
+(5, 'jardinagem'),
+(6, 'Eletronicos');
 
 -- --------------------------------------------------------
 
@@ -53,19 +55,19 @@ CREATE TABLE `produtos` (
   `preco` decimal(10,2) DEFAULT NULL,
   `descricao` text NOT NULL,
   `categoria_id` int(11) NOT NULL,
-  `usado` tinyint(1) NOT NULL
+  `usado` tinyint(1) NOT NULL,
+  `imagem` varchar(50) NOT NULL,
+  `fornecedor_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `produtos`
 --
 
-INSERT INTO `produtos` (`id`, `nome`, `preco`, `descricao`, `categoria_id`, `usado`) VALUES
-(6, 'Caneta', '1.00', 'Caneta esferogrÃ¡fica BIC na cor preta', 2, 0),
-(7, 'borracha', '2.00', 'borracha', 2, 0),
-(8, 'Placa-mÃ£e', '300.00', 'Placa-mÃ£e Asus ajn134', 1, 0),
-(9, 'Processador', '1200.00', 'Processador i9-7700K', 1, 0),
-(10, 'MemÃ³ria RAM', '250.00', 'MemÃ³ria RAM Kingston 8GB', 1, 0);
+INSERT INTO `produtos` (`id`, `nome`, `preco`, `descricao`, `categoria_id`, `usado`, `imagem`, `fornecedor_id`) VALUES
+(14, 'Caneta', '1.00', 'Caneta EsferogrÃ¡fica Azul BIC', 1, 0, 'caneta.jpg', 1),
+(15, 'baianor', '9999.00', 'baianor simulator feijoada fodasekkkkkkkkkkkk', 2, 0, 'baianor.jpg', 1),
+(16, 'Borracha', '1.00', 'asockvnjnqnqfbqfbwfbw', 1, 0, 'borracha.jpg', 1);
 
 --
 -- Indexes for dumped tables
@@ -91,13 +93,13 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT for table `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
